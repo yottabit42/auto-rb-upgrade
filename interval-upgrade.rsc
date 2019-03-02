@@ -1,4 +1,4 @@
-# Assume script is named 'interval-upgrade'.
+# Assume script is named 'auto-upgrade'.
 # Run every day at 02:00:00.
 /system scheduler
   add interval=1d name=interval-upgrade on-event=auto-upgrade policy=\
