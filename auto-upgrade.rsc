@@ -1,3 +1,5 @@
+## Required permissions: ftp, reboot, read, write, policy, test.
+
 ## Set variables.
 # Notification e-mail (ensure e-mail sending is already configured).
 :local email "you@example.com"
