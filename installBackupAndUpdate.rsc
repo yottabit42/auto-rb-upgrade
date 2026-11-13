@@ -1,9 +1,11 @@
 ###
 # Run the following commands in a RouterOS v7.10+ terminal to install or update BackupAndUpdate:
-# /tool fetch url="https://raw.githubusercontent.com/yottabit42/auto-rb-upgrade/master/installBackupAndUpdate.rsc"
-# /import file-name="installBackupAndUpdate.rsc"
-# :delay 2s
-# /file remove [find where name="installBackupAndUpdate.rsc"]
+# {
+#   /tool fetch url="https://raw.githubusercontent.com/yottabit42/auto-rb-upgrade/master/installBackupAndUpdate.rsc" output=file as-value
+#   /import file-name="installBackupAndUpdate.rsc"
+#   :delay 2s
+#   /file remove [find where name="installBackupAndUpdate.rsc"]
+# }
 ###
 
 :if ([:len [/system script find where name="BackupAndUpdate"]] = 0) do={

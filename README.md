@@ -26,10 +26,12 @@ Originally forked from [beeyev/Mikrotik-RouterOS-automatic-backup-and-update](ht
 Run the following commands in a RouterOS terminal to download and run the idempotent installer wrapper [`installBackupAndUpdate.rsc`](installBackupAndUpdate.rsc):
 
 ```routeros
-/tool fetch url="https://raw.githubusercontent.com/yottabit42/auto-rb-upgrade/master/installBackupAndUpdate.rsc"
-/import file-name="installBackupAndUpdate.rsc"
-:delay 2s
-/file remove [find where name="installBackupAndUpdate.rsc"]
+{
+  /tool fetch url="https://raw.githubusercontent.com/yottabit42/auto-rb-upgrade/master/installBackupAndUpdate.rsc" output=file as-value
+  /import file-name="installBackupAndUpdate.rsc"
+  :delay 2s
+  /file remove [find where name="installBackupAndUpdate.rsc"]
+}
 ```
 
 This creates (or safely updates in place if already installed):
